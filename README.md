@@ -32,10 +32,14 @@ There are a critical options which you need to modify to adapt you dataset's pro
 Training process was simplified, just type the command in your terminal
 
 ```
-python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
+python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model} --imgW {your_width} --imgH 64
 ```
-To use GPU to speed up your training, just pass ``--cuda`` in options. Your trained model will be exported your `--save_model` in options. Please see the code for more optitions.
-# Predict
+To use GPU to speed up your training, just pass ``--cuda`` in options. Your trained model will be exported your `--save_model` in options. Please see the code for more options.
 
+# Predict
+To make a prediction for a new image
+
+```
+```
 # Dependences
 # Any Problems:
