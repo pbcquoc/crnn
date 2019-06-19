@@ -23,13 +23,16 @@ Here you must put your images with it's labels in the same folder. Each image is
 You can look at data *folder* to see an example. 
 
 # Training
+## Training options
+
+## Train
 Training process was simplified, just type the command in your terminal
 
 ```
 python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
 ```
-To use GPU to speed up your training, just pass ``--cuda`` in options. Your trained model will be exported you `--save_model` in options. Please see the code for more optitions.
-
+To use GPU to speed up your training, just pass ``--cuda`` in options. Your trained model will be exported your `--save_model` in options. Please see the code for more optitions.
 # Predict
+
 # Dependences
 # Any Problems:
