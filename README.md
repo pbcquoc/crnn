@@ -7,13 +7,13 @@ In this repo, I try to provide a simple API which help everyone can train their 
 
 # Dataset
 You must organize your dataset in the below structure
-
+```
 ├── 23963.jpg
 ├── 23963.txt
 ├── char
 ├── test
 └── train
-
+```
 Here you must put your images with it's labels in the same folder. Each image is a text line, so just put only one line of text in corresponding label file.
 
 *train*: list of all training files
