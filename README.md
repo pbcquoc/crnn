@@ -17,7 +17,9 @@ You must organize your dataset in the below structure
 Here you must put your images with it's labels in the same folder. Each image is a text line, so just put only one line of text in corresponding label file.
 
 *train*: list of all training files 
+
 *test*: list of all testing files 
+
 *char*: list of all characters in labels 
 
 You can look at data folder to see an example. 
