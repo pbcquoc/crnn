@@ -7,7 +7,7 @@ In this repo, I try to provide a simple API which help everyone can train their 
 
 # Dataset
 You must organize your dataset in the below structure
-```bash
+```
 ├── 23963.jpg
 ├── 23963.txt
 ├── char
@@ -24,7 +24,8 @@ You can look at data *folder* to see an example.
 
 # Training
 Training process was simplified, just type the command in your terminal
-```bash
+
+```
 python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
 ```
 # Predict
