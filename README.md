@@ -24,6 +24,9 @@ You can look at data *folder* to see an example.
 
 # Training
 ## Training options
+There are two critical options which you need to modify to adapt you dataset's properties:
+* imgW: 
+* imgH:
 
 ## Train
 Training process was simplified, just type the command in your terminal
