@@ -23,6 +23,10 @@ Here you must put your images with it's labels in the same folder. Each image is
 You can look at data *folder* to see an example. 
 
 # Training
+Training process was simplified, just type the command in your terminal
+```python
+python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
+```
 # Predict
 # Dependences
 # Any Problems:
