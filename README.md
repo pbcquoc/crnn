@@ -1,0 +1,2 @@
+# crnn
+Handwritten recognition, vietnamese
