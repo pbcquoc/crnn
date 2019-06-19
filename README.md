@@ -24,7 +24,7 @@ You can look at data *folder* to see an example.
 
 # Training
 ## Training options
-There are a critical options which you need to modify to adapt you dataset's properties:
+There are critical options which you need to modify to adapt you dataset's properties:
 * imgW: should be larger than the maximun width of images in training set. All images, which have small width, will be padded in the right hand.
 * imgH: should be 64 in the model since the downsampling rate is 64 pixel in vertical orientation.
 
@@ -43,4 +43,7 @@ To make a prediction for a new image
 python demo.py --model {model} --alphabet {char} --imgW {width} --imgH 64 --img {img}
 ```
 # Dependences
+* [warp_ctc_pytorch]{https://github.com/SeanNaren/warp-ctc/tree/pytorch_bindings/pytorch_binding}
+
 # Any Problems:
+If you have any problems, please email me or create an issue.
