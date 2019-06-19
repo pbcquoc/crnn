@@ -28,6 +28,7 @@ Training process was simplified, just type the command in your terminal
 ```
 python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
 ```
+To use GPU to speed up your training, just pass ``--cuda`` in options
 # Predict
 # Dependences
 # Any Problems:
