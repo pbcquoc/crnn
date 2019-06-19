@@ -1,5 +1,5 @@
 # Convolution Recurrent Neural Nets
-First of all, i would like to thank Jieru Mei. My repo was heavily based on his repo.
+First of all, i would like to thank [Jieru Mei](https://github.com/meijieru/crnn.pytorch). My repo was heavily based on his repo.
 
 This repo implemented convolution recurrent neural nets(CRNN) for handwritten recognition, optical character recognition. CRNN can use for many text levels: character, word, or even a text line.
 
@@ -43,7 +43,7 @@ To make a prediction for a new image
 python demo.py --model {model} --alphabet {char} --imgW {width} --imgH 64 --img {img}
 ```
 # Dependences
-* [warp_ctc_pytorch]{https://github.com/SeanNaren/warp-ctc/tree/pytorch_bindings/pytorch_binding}
+* [warp_ctc_pytorch](https://github.com/SeanNaren/warp-ctc/tree/pytorch_bindings/pytorch_binding)
 
 # Any Problems:
 If you have any problems, please email me or create an issue.
