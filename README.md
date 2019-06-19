@@ -24,9 +24,9 @@ You can look at data *folder* to see an example.
 
 # Training
 Training process was simplified, just type the command in your terminal
-``
+```
 python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model}
-``
+```
 # Predict
 # Dependences
 # Any Problems:
