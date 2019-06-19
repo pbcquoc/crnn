@@ -24,9 +24,9 @@ You can look at data *folder* to see an example.
 
 # Training
 ## Training options
-There are two critical options which you need to modify to adapt you dataset's properties:
-* imgW: 
-* imgH:
+There are a critical options which you need to modify to adapt you dataset's properties:
+* imgW: should be larger than the maximun width of images in training set. All images, which have small width, will be padded in the right hand.
+* imgH: should be 64 in the model since the downsampling rate is 64 pixel in vertical orientation.
 
 ## Train
 Training process was simplified, just type the command in your terminal
