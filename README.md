@@ -20,7 +20,7 @@ Here you must put your images with it's labels in the same folder. Each image is
 *test*: list of all testing files <br />
 *char*: list of all characters in labels <br />
 
-You can look at data folder to see an example. 
+You can look at data *folder* to see an example. 
 
 # Training
 # Predict
