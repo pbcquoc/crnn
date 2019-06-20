@@ -12,7 +12,6 @@ import numpy as np
 from warpctc_pytorch import CTCLoss
 import os
 import utils
-import dataset
 from loader import DatasetLoader
 from multiprocessing import cpu_count
 
