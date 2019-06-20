@@ -43,8 +43,10 @@ To make a prediction for a new image
 python demo.py --model {model} --alphabet {char} --imgW {width} --imgH 64 --img {img}
 ```
 Here is a sample
+
 ![](https://raw.githubusercontent.com/pbcquoc/crnn/master/data/18449-2_10-4.jpg)
-đđ-ặ--nngg   vvviiệệtt  tt--h--ắ--nnggg  ----> đặng việt thắng      : prob: 0.9896178245544434
+
+Result: đđ-ặ--nngg   vvviiệệtt  tt--h--ắ--nnggg  ----> đặng việt thắng      : prob: 0.9896178245544434
 
 # Dependences
 * [warp_ctc_pytorch](https://github.com/SeanNaren/warp-ctc/tree/pytorch_bindings/pytorch_binding)
