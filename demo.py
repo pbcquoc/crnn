@@ -1,14 +1,13 @@
 import torch
 from torch.autograd import Variable
 import utils
-import dataset
 from PIL import Image
 import sys
 import models.crnn as crnn
 import argparse
 from torch.nn.functional import softmax
 import numpy as np
-
+from loader import resizeNormalize
 parser = argparse.ArgumentParser()
 parser.add_argument('--img', required=True, help='path to img')
 parser.add_argument('--alphabet', required=True, help='path to vocab')
@@ -30,7 +29,7 @@ model.load_state_dict(torch.load(opt.model))
 
 converter = utils.strLabelConverter(alphabet)
 
-transformer = dataset.resizeNormalize((opt.imgW, opt.imgH))
+transformer = resizeNormalize(opt.imgW, opt.imgH)
 image = Image.open(opt.img).convert('L')
 image = transformer(image)
 if torch.cuda.is_available():
