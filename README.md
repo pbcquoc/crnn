@@ -29,10 +29,10 @@ There are critical options which you need to modify to adapt you dataset's prope
 * imgH: should be 64 in the model since the downsampling rate is 64 pixel in vertical orientation.
 
 ## Train
-Training process was simplified, just type the command in your terminal
+Training process was simplified, just type the command in your terminal and you should use the pretrain model
 
 ```
-python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model} --imgW {your_width} --imgH 64
+python train.py --root {root_folder} --train train --val test --alphabet char --pretrain {pretrain_model} --imgW {your_width} --imgH 64 --pretrain expr/crnn.rnn.pth
 ```
 To use GPU to speed up your training, just pass ``--cuda`` in options. Your trained model will be exported your `--save_model` in options. Please see the code for more options.
 
