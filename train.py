@@ -13,7 +13,6 @@ from warpctc_pytorch import CTCLoss
 import os
 import utils
 import dataset
-from torchsummary import summary
 from loader import DatasetLoader
 from multiprocessing import cpu_count
 
@@ -96,7 +95,6 @@ if opt.cuda:
     crnn = torch.nn.DataParallel(crnn, device_ids=range(opt.ngpu))
     image = image.cuda()
     criterion = criterion.cuda()
-summary(crnn, (1, 64, 1024))
 
 image = Variable(image)
 text = Variable(text)
@@ -104,8 +102,7 @@ length = Variable(length)
 
 
 # setup optimizer
-optimizer = optim.Adam(crnn.parameters(), lr=opt.lr,
-                           betas=(opt.beta1, 0.999))
+optimizer = optim.Adam(crnn.parameters(), lr=opt.lr)
 
 def val(net, data_loader, criterion, max_iter=1000):
     print('Start val')
