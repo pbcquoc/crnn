@@ -1,4 +1,4 @@
-# Convolution Recurrent Neural Nets
+# Vietnamese Handwritten Characters Recognition - Convolution Recurrent Neural Nets
 First of all, i would like to thank [Jieru Mei](https://github.com/meijieru/crnn.pytorch). My repo was heavily based on his repo.
 
 This repo implemented convolution recurrent neural nets(CRNN) for handwritten recognition, optical character recognition. CRNN can use for many text levels: character, word, or even a text line.
