@@ -5,6 +5,8 @@ This repo implemented convolution recurrent neural nets(CRNN) for handwritten re
 
 In this repo, I try to provide a simple API which help everyone can train their own model. This model, which i have used for many industry projects, can guarantee to work well in many cases.
 
+![](img/crnn.png)
+
 # Dataset
 You must organize your dataset in the below structure
 ```
