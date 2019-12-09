@@ -1,6 +1,5 @@
 import torchvision
 import torch
-from torchvision.transforms import ToTensor
 import os
 import torch.utils.data as data
 from PIL import Image
@@ -9,42 +8,34 @@ import argparse
 import time
 from multiprocessing import cpu_count
 import uuid
+from models.utils import resizePadding
+
 
 def img_loader(path):
-    return Image.open(path).convert('L')
+    img = Image.open(path).convert('RGB')
+    return img
+
+def train_transform(path):
+    pass
+
+def test_transform(path):
+    pass
 
 def target_loader(path):
-    label = open(path).read().rstrip()
+    label = open(path).read().rstrip('\n')
     return label
 
 def default_flist_reader(flist):
     imlist = []
+    img_exts = ('jpg', 'png', 'JPG', 'PNG')
     with open(flist) as rf:
         for line in rf.readlines():
             impath = line.strip()
-            if impath.endswith('.jpg') or impath.endswith('.png'):
+            if impath.endswith(img_exts):
                 imlabel = os.path.splitext(impath)[0] + '.txt'
                 imlist.append((impath, imlabel))
                                     
     return imlist
-
-class resizeNormalize(object):
-    def __init__(self, width, height):
-        self.expected_size = width, height
-        self.toTensor = ToTensor()
-
-    def __call__(self, img):
-        desired_w, desired_h = self.expected_size #(width, height)
-        img_w, img_h = img.size  # old_size[0] is in (width, height) format
-        ratio = 1.0*img_w/img_h
-        new_size = min(desired_w, int(np.floor(desired_h*ratio))), desired_h
-        img = img.resize(new_size, Image.ANTIALIAS)
-
-        # padding image
-        new_img = Image.new("L", (desired_w, desired_h), color=255)
-        new_img.paste(img, (0, 0))
-        new_img = self.toTensor(new_img)
-        return new_img
 
 class ImageFileList(data.Dataset):
     def __init__(self, root, flist, transform, target_transform,
@@ -77,8 +68,7 @@ class alignCollate(object):
         images, labels = zip(*batch)
         imgH = self.imgH
         imgW = self.imgW
-        transform = resizeNormalize(imgW, imgH)
-        images = [transform(image) for image in images]
+        images = [resizePadding(image, self.imgW, self.imgH) for image in images]
         images = torch.cat([t.unsqueeze(0) for t in images], 0)
 
         return images, labels
@@ -127,7 +117,7 @@ def main():
     parser.add_argument('--val', required=True, help='path to test list')
     opt = parser.parse_args()
 
-    loader = DatasetLoader(opt.root, opt.train, opt.val, 1024, 64)
+    loader = DatasetLoader(opt.root, opt.train, opt.val, 512, 32)
     for _ in range(100):
         train_loader = iter(loader.train_loader(64, num_workers=cpu_count()))
         i = 0
