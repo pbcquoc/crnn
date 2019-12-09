@@ -42,7 +42,7 @@ To use GPU to speed up your training, just pass ``--cuda`` in options. Your trai
 To make a prediction for a new image
 
 ```
-python demo.py --model {model} --alphabet {char} --imgW {width} --imgH 64 --img {img}
+python demo.py --model {model} --alphabet {char} --imgW {width} --imgH 32 --img {img}
 ```
 Here is a sample
 
